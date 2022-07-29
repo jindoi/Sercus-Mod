@@ -1,0 +1,102 @@
+focus_tree = {
+    id = FEL_focus
+
+    country = {
+        factor = 0
+        modifier = {
+            add = 10
+            original_tag = FEL
+        }
+    }
+
+    default = no
+
+    continuous_focus_position = { x = 1000 y = 1000 }
+
+    focus = { # 펠른의 상황
+        id = FEL_focus_0
+        icon = GFX
+        cost = 10.00
+        x = 18
+        y = 0
+
+        completion_reward = {
+            add_political_power = 120 # + 정치력 120
+        }
+    }
+    
+    focus = { # 과감한 뉴딜 정책
+        id = FEL_focus_1
+        icon = GFX
+        cost = 10.00
+        x = 3
+        y = 2
+
+        prerequisite = {
+            focus = FEL_focus_0
+        }
+
+        completion_reward = {
+            swap_ideas = {
+                remove_idea = economic_panic_0
+                add_idea = economic_panic_1
+            }
+
+
+            add_tech_bonus = { # 산업 연구 보너스 100% 2개
+                name = industrial_bonus
+                bonus = 1.0
+                uses = 2
+                category = industry
+            }
+        }
+    }
+
+    focus = { # "황제는 견뎌내신다"
+        id = FEL_focus_2
+        icon = GFX
+        cost = 10.00
+        x = 18
+        y = 2
+
+        prerequisite = {
+            focus = FEL_focus_0
+        }
+    }
+
+    focus = { # 군주제 루트
+        id = FEL_focus_3
+        icon = GFX
+        cost = 10.00
+        x = 18
+        y = 4
+
+        prerequisite = {
+            focus = FEL_focus_2
+        }
+    }
+
+    focus = { # 민주주의 루트
+        id = FEL_focus_4
+        icon = GFX
+        cost = 10.00
+        x = 14
+        y = 4
+
+        prerequisite = {
+            focus = FEL_focus_2
+        }
+    }
+
+    focus = { # 파시스트 루트
+        id = FEL_focus_5
+        icon = GFX
+        cost = 10.00
+        x = 22
+        y = 4
+
+        prerequisite = {
+            focus = FEL_focus_2
+        }
+    }
+}
